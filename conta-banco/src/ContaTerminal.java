@@ -1,13 +1,34 @@
+import java.util.Scanner;
+import java.util.Locale;
+
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-        //TODO: Conhecer e importar a classe Scanner
 
-        //TODO: Exibir as mensagens para o nosso usuário
+        // Declarando variáveis
+        int numero;
+        String agencia;
+        String nomeCliente;
+        double saldo;
 
-        //TODO: Obter pela scanner os valores digitados no terminal
+        // Instanciando o objeto scanner da classe Scanner e configurando o padrão local do US
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US); // US pois a entrada decimal usa ponto final e não virgula
 
-        //TODO: Exibir a mensagem conta criada
+        // Obtendo os valores dos atributos pelo terminal através da scanner, inicializando as variáveis.
+        System.out.print("Por favor, digite o número da sua Agência: ");
+        agencia = scanner.nextLine();
 
-        //TODO: Declarar as variáveis de acordo com suas regras
+        System.out.print("Cliente, digite seu nome: ");
+        nomeCliente = scanner.nextLine();
+
+        System.out.print("Cliente, digite seu saldo: ");
+        saldo = scanner.nextDouble();
+
+        System.out.print("Por favor, digite o número da Conta: ");
+        numero = scanner.nextInt();
+
+        // Exibição da mensagem da conta criada
+        System.out.println("\nOlá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é "
+         + agencia + ", conta " + numero + " e seu saldo " + saldo + " já está disponível para saque\n");
+
     }
 }
